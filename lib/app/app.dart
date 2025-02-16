@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:savfing/app/core/bloc/bloc_providers.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:savfing/app/core/bloc/bloc_providers.dart';
+import 'package:savfing/app/routes/app_router.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  final AppRouter appRouter;
+
+  const App({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: BlocProviders.providers,
-      child: MaterialApp.router(),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: appRouter.config(),
     );
   }
 }
