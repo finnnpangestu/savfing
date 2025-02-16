@@ -4,7 +4,8 @@ linter:
   rules:
     avoid_print: true
     always_use_package_imports: true
-
+    require_trailing_commas: true
+    
 analyzer:
   exclude:
     - "**/*.g.dart"
